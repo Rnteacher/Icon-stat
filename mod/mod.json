@@ -1,0 +1,39 @@
+{
+  "geode": "5.10.1",
+  "gd": { "win": "2.2081" },
+  "id": "axolodlaat.icon-stat",
+  "name": "Icon Stat",
+  "version": "v1.0.0",
+  "developer": "axolodlaat",
+  "description": "Publish and browse verified Geometry Dash icon collections from player profiles.",
+  "tags": ["online", "enhancement", "interface", "utility"],
+  "links": { "source": "https://github.com/Rnteacher/Icon-stat" },
+  "dependencies": {
+    "geode.node-ids": { "version": ">=1.23.3", "required": true },
+    "rynat.better_unlock_info": { "version": ">=1.3.1", "required": false },
+    "ninkaz.colorful-icons": { "version": ">=1.0.10", "required": false }
+  },
+  "settings": {
+    "general-title": { "type": "title", "name": "Icon Stat" },
+    "enabled": { "type": "bool", "name": "Enable Icon Stat", "default": true },
+    "publish": { "type": "bool", "name": "Publish My Icon Collection", "default": false,
+      "description": "Allows authenticated uploads. Turning this off does not delete already published data; use Delete Published Data." },
+    "auto-sync": { "type": "bool", "name": "Automatically Synchronize", "default": true,
+      "description": "Synchronize once when Geometry Dash opens. Disable this to use only the manual Synchronize Now button.",
+      "enable-if": "enabled && publish" },
+    "sync-new-icons": { "type": "bool", "name": "Sync Newly Unlocked Icons", "default": true,
+      "description": "Automatically publish collection changes shortly after you unlock an icon. Failed attempts retry after a short delay.",
+      "enable-if": "enabled && publish" },
+    "show-profile-stat": { "type": "bool", "name": "Show Icon Stat on Profiles", "default": true,
+      "enable-if": "enabled" },
+    "cache-minutes": { "type": "int", "name": "Remote Cache (minutes)", "default": 10, "min": 0, "max": 1440,
+      "enable-if": "enabled" },
+    "server-url": { "type": "string", "name": "Server URL", "default": "https://icon-stat-api.dlaat-nw.workers.dev",
+      "description": "HTTPS base URL for your deployed Cloudflare Worker." },
+    "actions": { "type": "button", "buttons": {
+      "sync-now": "Synchronize Now",
+      "delete-published": "Delete Published Data",
+      "clear-cache": "Clear Remote Cache"
+    }}
+  }
+}

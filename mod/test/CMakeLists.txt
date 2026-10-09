@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(icon_stat_contract_test LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+add_executable(icon_stat_contract_test collection_contract_test.cpp)
+target_include_directories(icon_stat_contract_test PRIVATE ../src)
+enable_testing()
+add_test(NAME collection_contract COMMAND icon_stat_contract_test)

@@ -1,0 +1,15 @@
+name = "icon-stat-api"
+main = "src/index.ts"
+compatibility_date = "2026-08-28"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "icon-stat"
+database_id = "4b48920d-35fd-41ad-a33b-e94d95a2f557"
+migrations_dir = "migrations"
+
+[vars]
+ARGON_BASE_URL = "https://argon.globed.dev/v1"
+ALLOWED_ORIGIN = "null"
+
+# Set with `wrangler secret put RATE_LIMIT_SALT`; never commit its value.

@@ -1,0 +1,22 @@
+backend/node_modules/
+backend/.wrangler/
+backend/dist/
+mod/build/
+mod/build-debug/
+mod/build-release/
+mod/test/build/
+mod/test/build-ninja/
+mod/test/build-final/
+mod/test/build-monitor/
+mod/test/*.exe
+mod/test/*.obj
+vendor/cpm-cache/
+*.user
+*.log
+
+# The exact upstream research checkouts are reproducible and not project source.
+vendor/geode/
+vendor/bindings/
+vendor/argon/
+vendor/better-unlock-info/
+vendor/colorful-icons/
